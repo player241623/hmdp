@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmdp.mapper.ShopMapper">
+    <update id="updateShop" parameterType="com.hmdp.entity.Shop">
+        update tb_shop
+        <set>
+            <!-- 更新商铺名称 -->
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <!-- 更新商铺类型的id -->
+            <if test="typeId != null">
+                type_id = #{typeId},
+            </if>
+            <!-- 更新商铺图片 -->
+            <if test="images != null">
+                images = #{images},
+            </if>
+            <!-- 更新商圈 -->
+            <if test="area != null">
+                area = #{area},
+            </if>
+            <!-- 更新地址 -->
+            <if test="address != null">
+                address = #{address},
+            </if>
+            <!-- 更新经度 -->
+            <if test="x != null">
+                x = #{x},
+            </if>
+            <!-- 更新维度 -->
+            <if test="y != null">
+                y = #{y},
+            </if>
+            <!-- 更新均价 -->
+            <if test="avgPrice != null">
+                avg_price = #{avgPrice},
+            </if>
+            <!-- 更新销量 -->
+            <if test="sold != null">
+                sold = #{sold},
+            </if>
+            <!-- 更新评论数量 -->
+            <if test="comments != null">
+                comments = #{comments},
+            </if>
+            <!-- 更新评分 -->
+            <if test="score != null">
+                score = #{score},
+            </if>
+            <!-- 更新营业时间 -->
+            <if test="openHours != null">
+                open_hours = #{openHours},
+            </if>
+            <!-- 更新创建时间 -->
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <!-- 更新更新时间 -->
+            <if test="updateTime != null">
+                update_time = #{updateTime}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
